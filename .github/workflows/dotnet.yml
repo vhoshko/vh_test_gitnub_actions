@@ -5,9 +5,11 @@ name: .NET
 
 on:
   push:
-    branches: [ "develop" ]
   pull_request:
     branches: [ "develop" ]
+    paths:
+    - '**.cs'
+    - '**.csproj'
 
 jobs:
   build:
@@ -21,8 +23,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore Sources\SuperMath\SuperMath.sln
+      run: dotnet restore
     - name: Build
-      run: dotnet build Sources\SuperMath\SuperMath.sln --no-restore
+      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test  Sources\SuperMath\SuperMath.sln --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal
