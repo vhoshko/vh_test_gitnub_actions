@@ -20,6 +20,7 @@ jobs:
     - uses: shogo82148/actions-setup-mysql@v1
       with:
         mysql-version: "mariadb-11.1"
+        root-password: rhu972ekm
     - run: mysql -uroot -e 'SELECT version()'
 
     - uses: actions/checkout@v3
