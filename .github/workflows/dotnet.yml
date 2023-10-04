@@ -17,6 +17,7 @@ jobs:
     steps:
 
     - uses: actions/checkout@v4
+    - run: mysqld
     - run: mysql -uroot -prhu972ekm -e 'SELECT version()'
 
     - uses: actions/checkout@v3
