@@ -17,7 +17,10 @@ jobs:
     steps:
 
     - uses: actions/checkout@v4
-    - run: mysqld start
+    - uses: shogo82148/actions-setup-mysql@v1
+      with:
+        mysql-version: "mariadb-11.1"
+        root-password: rhu972ekm
     - run: mysql -uroot -prhu972ekm -e 'SELECT version()'
 
     - uses: actions/checkout@v3
