@@ -16,6 +16,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Create secrets file
+      run: |
+        echo {                                                 > Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo   \"Test\": {                                    >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo     \"Key\": \"${{ secrets.TEST_KEY }}\"         >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo   }                                              >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo }                                                >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+    - name: Debug secrets file
+      run: |
+        more Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
