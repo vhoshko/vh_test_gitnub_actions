@@ -26,11 +26,12 @@ namespace Tests.SuperMath.Tests
         public void TestSecrets()
         {
             var configurationBuilder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true);
             var configuration = configurationBuilder.Build();
 
             Assert.NotNull(configuration["API:Key"]);
-            Assert.NotNull(configuration["Test:Key"]);
+            Assert.Equal("!!!!!!!!", configuration["Test:Key"]);
         }
     }
 }
