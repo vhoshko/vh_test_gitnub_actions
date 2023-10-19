@@ -1,4 +1,5 @@
 using SuperMath;
+using Microsoft.Extensions.Configuration;
 
 namespace Tests.SuperMath.Tests
 {
@@ -19,6 +20,17 @@ namespace Tests.SuperMath.Tests
         public void TestOneParameter(int value)
         {
             Assert.Equal(value, SuperMathInt.Add(value));
+        }
+
+        [Fact]
+        public void TestSecrets()
+        {
+            var configurationBuilder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            var configuration = configurationBuilder.Build();
+
+            Assert.NotNull(configuration["API:Key"]);
+            Assert.NotNull(configuration["Test:Key"]);
         }
     }
 }
