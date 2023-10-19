@@ -23,7 +23,7 @@ jobs:
         echo     \"Key\": \"${{ secrets.TEST_KEY }}\"         >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
         echo   }                                              >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
         echo }                                                >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
-    - name: View secrets file
+    - name: Debug secrets file
       run: |
         more Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
     - name: Setup .NET
