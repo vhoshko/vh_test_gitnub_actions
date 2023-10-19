@@ -19,8 +19,8 @@ jobs:
     - name: Create secrets file
       run: |
         echo {                              > Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
-        echo   "Test": {                   >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
-        echo     "Key": "????"             >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo   \"Test\": {                 >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo     \"Key\": \"????\"         >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
         echo   }                           >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
         echo }                             >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
     - name: View secrets file
