@@ -18,12 +18,11 @@ jobs:
     - uses: actions/checkout@v3
     - name: Create secrets file
       run: |
-        cd
-        echo {                              > Sources/Tests.SuperMath/appsettings.Development.json
-        echo   "Test": {                   >> Sources/Tests.SuperMath/appsettings.Development.json
-        echo     "Key": "????"             >> Sources/Tests.SuperMath/appsettings.Development.json
-        echo   }                           >> Sources/Tests.SuperMath/appsettings.Development.json
-        echo }                             >> Sources/Tests.SuperMath/appsettings.Development.json
+        echo {                              > Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo   "Test": {                   >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo     "Key": "????"             >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo   }                           >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
+        echo }                             >> Sources/SuperMath/Tests.SuperMath/appsettings.Development.json
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
